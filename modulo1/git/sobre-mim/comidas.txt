@@ -1,0 +1,10 @@
+1.	Sushi
+2.	Hamburguer
+3.	Qualquer doce
+4.	Batata-Frita
+5.	Salada(Alface c Cebola)
+6.	Pizza
+7.	Macarrão ao Alho e Óleo
+8.	Ovo Cozido(Clara)
+9.	Arroz Carreteiro
+10.	Frutos do Mar!

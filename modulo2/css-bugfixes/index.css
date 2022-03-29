@@ -109,7 +109,10 @@ div:last-child {
     width: 60%;
      
 } */
+img{
+width: 60px;
 
+}
 table {
     width: 60%;
     text-align: center;

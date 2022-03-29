@@ -90,6 +90,7 @@ div img {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    display: block;
 }
 
 
@@ -103,9 +104,15 @@ div:nth-child(2),
 div:last-child {
     text-align: center;
 }
+/* 
+.tabelaToda{
+    width: 60%;
+     
+} */
 
 table {
     width: 60%;
+    text-align: center;
 }
 
 td button {
@@ -121,9 +128,6 @@ td button {
     height: 100px;
 }
 
-#container-para-comprar > p{
-    display: block;
-}
 
 #back-button {
     background-color: white;

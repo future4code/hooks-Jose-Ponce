@@ -114,6 +114,9 @@ td button {
     height: 100px;
 }
 
+#container-para-comprar > p{
+    display: block;
+}
 
 #back-button {
     background-color: white;

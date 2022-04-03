@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  hmtl,body{
+    box-sizing: border-box;
+    /* background-color: purple; */
+  }
+  
+  header{
+    background-color: yellow;
+    
+    display: grid;
+    width: 0 px;
+    background-color: black;
+    color:white;
+    grid-area: h;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+
+    grid-area: h;
+  }
+  header:hover{
+  color: green;
+
+  }
+  main{
+    /* background-color: blues; */
+    
+    grid-area: m;
+  }
+  
+  
+  
+  footer{
+    display:grid;
+    width: 0 px;
+    background-color: black;
+    color:white;
+    grid-area: f;
+    text-align: center;
+    align-content: center;
+
+  }
+  footer:hover{
+  color: green;
+
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-areas: "h h" "m m" "f f";
+  }
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20vh 20vh 20vh;
+    align-items: center ;
+    justify-items: center;
+  }
+a{
+  text-decoration: none;
+}
+
+a > p{
+    color:black;
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+a > p:hover {
+  background-color:black ;
+  color:white;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   
+  .caixaSobreMim{
+    
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.9;
+    transition: 0.3s;
+  } */
+  /* .caixaSobreMim:hover{
+    background-color:black ;
+    color:white;
+    opacity: 1;
+    transition: 0.3s;
+  } */
+/*   
+  .caixaHabilidades{
+    width: 150px;
+    height: 150px;
+    border-style: solid; 
+  }
+
+  .caixaEstudos{
+    width: 150px;
+    height: 150px;
+    border-style: solid; 
+  }
+
+  .caixaEmpresas{
+    width: 150px;
+    height: 150px;
+    border-style: solid; 
+  }
+
+  .caixaProjetos{
+    width: 150px;
+    height: 150px;
+    border-style: solid; 
+  }
+
+  .caixaFaleComigo{
+    width: 150px;
+    height: 150px;
+    border-style: solid; 
+  } */

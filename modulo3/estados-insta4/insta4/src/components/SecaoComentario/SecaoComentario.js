@@ -19,16 +19,15 @@ export class SecaoComentario extends Component {
 	}
 
 	onChangeComentario = (event) => {
-		this.setState({
-			comentarioInicial: event.target.value
-		})
+		console.log(event.target.value)
+		this.setState({valorInputComentario: event.target.value})
 	}
 
-	aoEnviar=(event)=>{
-		this.setState({valorFinal : this.state.valorComentario})
-		console.log(`${this.state.valorFinal}`)
+	// aoEnviar=(event)=>{
+	// 	this.setState({valorFinal : this.state.valorComentario})
+	// 	console.log(`${this.state.valorFinal}`)
 
-	}
+	// }
 
 
 
@@ -37,7 +36,7 @@ export class SecaoComentario extends Component {
 			
 			<InputComentario input
 				placeholder={'Comentário'}
-				value={''}
+				value={this.state.valorInputComentario}
 				onChange={this.onChangeComentario}
 			/>
 			<button onClick={this.props.aoEnviar}>Enviar</button>

@@ -53,14 +53,14 @@ class Post extends React.Component {
     if(this.state.curtido){
       this.setState({
         curtido: !this.state.curtido,
-        iconeCurtida: iconeCoracaoPreto,
+        iconeCurtida: iconeCoracaoBranco, //iconeCoracaoPreto
         numeroCurtidas: this.state.numeroCurtidas -1
       })
     }
     else{
       this.setState({
         curtido: !this.state.curtido,
-        iconeCurtida: iconeCoracaoBranco,
+        iconeCurtida: iconeCoracaoPreto, //iconeCoracaoBranco
         numeroCurtidas: this.state.numeroCurtidas +1
       })
     }

@@ -1,36 +1,124 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import Post from './components/Post/Post';
 
-const MainContainer = styled.div`
+  
+  const arrayPosts = [
+  {
+    nomeUsuario: "Paulinha",
+    fotoUsuario: 'https://picsum.photos/50/50',
+    fotoPost: 'https://picsum.photos/200/150'
+  },
+  
+  {
+    nomeUsuario: "Jorge Ben Jor",
+    fotoUsuario: 'https://picsum.photos/50/70',
+    fotoPost: 'https://picsum.photos/200/160'
+  },
+  {
+    nomeUsuario: "Leão Lobo",
+    fotoUsuario: 'https://picsum.photos/50/60',
+    fotoPost: 'https://picsum.photos/200/162'
+  }
+];
+
+const AppContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-`
+`;
 
-class App extends React.Component {
+const FormContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 180px;
+  width: 240px;
+  border: 1px solid gray;
+  margin: 20px;
+  padding: 30px;
+`;
+
+  class App extends React.Component {
+    state = {
+      posts: arrayPosts,
+      userName: "",
+      userPhoto: "",
+      postPhoto: ""
+    };
+
+    changeUserName = (event) => {
+      this.setState({ userName: event.target.value });
+    };
+
+    changeUserPhoto = (event) => {
+      this.setState({userPhoto: event.target.value});
+    };
+
+    changePostPhoto = (event) => {
+      this.setState({postPhoto: event.target.value});
+    };
+
+    addNewPost = () => {
+      const newPost = {
+        nomeUsuario: this.state.userName,
+        fotoUsuario: this.state.userPhoto,
+        fotoPost: this.state.postPhoto
+      };                                                       //DELETAR O ; PARA VERIFICAR SE DERRUBA O PROJETO
+
+      this.setState({
+        posts: [...this.state.posts, newPost],
+        userName: "",
+        userPhoto: "",
+        postPhoto: ""
+      });
+    };
+
   render() {
-    return (
-      <MainContainer>
+    const componentesPost = this.state.posts.map((p) => {
+      return (
         <Post
-          nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/150'}
+        nomeUsuario={p.nomeUsuario}
+        fotoUsuario={p.fotoUsuario}
+        fotoPost={p.fotoPost}
         />
-         <Post
-          nomeUsuario={'jorge ben jor'}
-          fotoUsuario={'https://picsum.photos/50/70'}
-          fotoPost={'https://picsum.photos/200/155'}
-        />
-         <Post
-          nomeUsuario={'leão Lobo'}
-          fotoUsuario={'https://picsum.photos/50/60'}
-          fotoPost={'https://picsum.photos/200/160'}
-        />
-      </MainContainer>
+      );
+    });
+
+    return (
+      <AppContainer>
+        <FormContainer>
+          <input
+            placeholder={"Nome do Usuário"}
+            value={this.state.userName}
+            onChange={this.changeUserName}
+          />
+
+          <input
+            placeholder={"Foto do Usuário"}
+            value={this.state.userPhoto}
+            onChange={this.changeUserPhoto}
+          />
+
+          <input
+            placeholder={"Foto do Post"}
+            value={this.state.postPhoto}
+            onChange={this.changePostPhoto}
+          />
+          <button onClick={this.addNewPost}>Criar Post</button>
+        </FormContainer>
+        {componentesPost}
+      </AppContainer>
     );
   }
 }
 
 export default App;
+
+
+
+
+
+
+

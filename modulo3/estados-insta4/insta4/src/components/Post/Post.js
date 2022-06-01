@@ -53,14 +53,14 @@ class Post extends React.Component {
     if(this.state.curtido){
       this.setState({
         curtido: !this.state.curtido,
-        iconeCurtida: iconeCoracaoPreto,
+        iconeCurtida: iconeCoracaoBranco, //iconeCoracaoPreto
         numeroCurtidas: this.state.numeroCurtidas -1
       })
     }
     else{
       this.setState({
         curtido: !this.state.curtido,
-        iconeCurtida: iconeCoracaoBranco,
+        iconeCurtida: iconeCoracaoPreto, //iconeCoracaoBranco
         numeroCurtidas: this.state.numeroCurtidas +1
       })
     }
@@ -96,7 +96,9 @@ class Post extends React.Component {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
 
-    return <PostContainer>
+    return (
+    
+      <PostContainer>
       <PostHeader>
         <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{this.props.nomeUsuario}</p>
@@ -119,7 +121,9 @@ class Post extends React.Component {
       </PostFooter>
       {componenteComentario}
     </PostContainer>
+
+    );
   }
 }
 
-export default Post
+export default Post;

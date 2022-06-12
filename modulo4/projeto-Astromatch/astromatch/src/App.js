@@ -3,6 +3,21 @@ import axios from "axios";
 import Header from "./components/Header/Header.js";
 import Main from "./components/Main/Main.js";
 import MatchList from "./components/MatchList/MatchList.js";
+import ClearButton from "./components/ClearButton/ClearButton.js";
+import styled from "styled-components";
+
+const AstroRoot = styled.div`
+  width: 400px;
+  height: 600px;
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #DCDCDC;
+  
+`
 
 const  App = () => {
   const [showProfile, setShowProfile] = useState({});
@@ -64,7 +79,8 @@ const  App = () => {
   const renderCurrentPage = () => {
     if (currentPage === 'mainPage'){
       return <Main
-
+      buttonLike={onClickY}
+      buttonDislike={onClickN}
       profileID={showProfile.id}
       profileName={showProfile.name}
       profileBio={showProfile.bio}
@@ -73,15 +89,7 @@ const  App = () => {
       
       />
     } else if (currentPage === 'matchListPage'){
-      return <MatchList 
-      
-      matchID={matchList.id}
-      matchName={matchList.name}
-      matchBio={matchList.bio}
-      matchPhoto={matchList.photo}
-      matchAge={matchList.age}
-
-      /> 
+      return <MatchList/> 
     }
   }
 
@@ -89,37 +97,17 @@ const  App = () => {
     setCurrentPage(currentPage)
   }
 
-//-------------------------------------------------------------------------------------------
-const [matchList, setMatchList] = useState([]);
-
-    const getMatches = () => {
-        axios
-          .get(
-            "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/jose-ponce-hooks/matches"
-          )
-          .then((res) => {
-            console.log(res.data.matches);
-            setMatchList(res.data.matches);
-          })
-          .catch(() => {
-            alert("ERRO NA LISTA, verificar conexão com a internet ou API.")
-          })
-      }
-    
-      // useEffect(() => {
-      //   getMatches()
-      // }, [currentPage('matchListPage')]);
-//-------------------------------------------------------------------------------------------
 
 
 
   return (
   <>
-    <Header changePage={changePage} />
-    {renderCurrentPage()}
-    <button onClick={onClickY}> amei </button>
-    <button onClick={onClickN}> próximo :/ </button>
+    <AstroRoot>
+        <Header changePage={changePage} />
+        {renderCurrentPage()}
 
+        {/* <ClearButton/> */}
+    </AstroRoot>
   </>
   );
 }

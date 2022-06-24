@@ -6,13 +6,12 @@ import LoginPage from "../pages/LoginPage";
 import AdminHomePage from "../pages/AdminHomePage";
 import CreateTripPage from "../pages/CreateTripPage";
 import TripDetailsPage from "../pages/TripDetailsPage";
-
+import ErrorPage from "../pages/ErrorPage";
 
 const Router = () => {
    
     return (
         <BrowserRouter>
-           <p>Routes papai!!</p>
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="/trips/list" element={<ListTripsPage />} />
@@ -21,6 +20,7 @@ const Router = () => {
           <Route path="/admin/trips/list" element={<AdminHomePage />} />
           <Route path="/admin/trips/create" element={<CreateTripPage />} />
           <Route path="/admin/trips/:id" element={<TripDetailsPage />} />
+          <Route path="*" element={<ErrorPage/>} />        
         </Routes>
       </BrowserRouter> 
        

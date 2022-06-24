@@ -5,7 +5,7 @@ function App() {
   return (
     <>
     
-    <h3>OIEEE APP JS</h3>
+    <h3>APP.JS</h3>
     <Router/>
     </>
   );

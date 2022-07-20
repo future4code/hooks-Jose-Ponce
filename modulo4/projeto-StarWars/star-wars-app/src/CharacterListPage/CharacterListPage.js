@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const CardList = styled.div`
 display: flex;
@@ -13,6 +15,24 @@ text-align: center;
 `
 
 const CharacterListPage = () => {
+
+    const [characterList, setCharacterList] = useState([])
+
+    const getCharacters =() =>{
+    axios.get('https://swapi.dev/api/')
+    .then((res)=>{
+        setCharacterList(res.data.people)
+        console.log(res)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+    }
+    
+    useEffect(() => {
+        getCharacters()
+    
+    },[])
 
     return(
     <>

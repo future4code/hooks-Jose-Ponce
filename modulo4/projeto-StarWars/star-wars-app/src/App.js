@@ -1,6 +1,4 @@
-import CharacterListPage from '../src/CharacterListPage/CharacterListPage';
-import CharacterDetailPage from '../src/CharacterDetailPage/CharacterDetailPage';
-import RouterComponents from './components/RouterComponents';
+import Router from "./routes/Router";
 
 function App() {
   
@@ -8,7 +6,7 @@ function App() {
   return (
       <>
         <h1>Star Wars</h1>
-        <RouterComponents/>
+        <Router/>
       </>
 )
 }
